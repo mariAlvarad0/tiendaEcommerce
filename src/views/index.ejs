@@ -1,0 +1,664 @@
+<!-- HTML PRINCIPAL -->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+
+    <!-- Custom File CSS -->
+    <%- include ('partials/head')%>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Menu navbar arriba -->
+    <header class="header_wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="img/logo.png" class="img-fluid" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#cursos">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#servicios">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#plantilla">Plantilla</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#galeria">Galeria</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ventas">Ventas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal2">Contacto</a>
+                        </li>
+                        <li class="nav-item mt-3 mt-lg-0">
+                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalVentas"> Mi Cesta
+                                <i class="fa-solid fa-cart-shopping" id="carritoContenedor">0</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- fin del navbar -->
+
+    <!-- Modal Contacto -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contáctenos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- pedir cita -->
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Asunto:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Su mensaje:</label>
+                            <textarea class="form-control" id="recipient-name" rows="3"></textarea>
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Tlfno:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Correo:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <!-- Pedir cita fin -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="main-btn mt-4">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- fin modal contactanos -->
+
+    <!-- el banner -->
+    <section id="home" class="banner_wrapper p-0">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url(img/slider/campo.jpg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>welcome to flowers for chuu</h1>
+                            <p>TIENDA Y CURSOS DE FLORISTERIA</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" style="background-image: url(img/slider/clase.jpg);">
+                    <div class="slide-caption text-center">
+                        <div>
+                            <h1>welcome to flowers for chuu</h1>
+                            <p>TIENDA Y CURSOS DE FLORISTERIA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <!-- pedir cita -->
+        <div class="container booking-area">
+            <form class="row">
+                <div class="col-lg mb-3 mb-lg-0">
+                    <input type="date" class="form-control" placeholder="Date">
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select class="form-select">
+                        <option selected>Personas</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select class="form-select">
+                        <option selected>Sesion</option>
+                        <option value="1">Pública</option>
+                        <option value="2">Privada</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <!-- <button type="submit" class="main-btn rounded-2 px-lg-3">disponibilidad</button> -->
+                    <!-- Button trigger modal -->
+                    <button type="button" id="disponibilidad" class="main-btn rounded-4 px-lg-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">Disponibilidad</button>
+                </div>
+            </form>
+        </div>
+        <!-- Pedir cita fin -->
+    </section>
+    <!-- Banner fin -->
+
+    <!-- Modal Disponibilidad-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- pedir cita -->
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <input type="date" class="form-control" placeholder="Date">
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <select class="form-select">
+                                <option selected>Personas</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <select class="form-select">
+                                <option selected>Sesion</option>
+                                <option value="1">Pública</option>
+                                <option value="2">Privada</option>
+                            </select>
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Tlfno:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Correo:</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Ramo Parisino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Árbol tropical
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Ramo Corazón
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Pedir cita fin -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="main-btn mt-4">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <section id="about" class="about_wrapper">
+        <div class="container">
+            <div class="row flex-lg-row flex-column-reverse ">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h3>Bienvenido a <span>la floristería <br class="d-none d-lg-block">flowers</span> for chuu</h3>
+                    <p>
+                        En chuu podrás encontrar una amplia variedad de servicios para distintos eventos o uso
+                        personal además de clases para aprender a manejar las flores y poder observar lo versátiles que son.
+                    </p>
+                    <p>
+                        lorum luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                        dolores eos qui ratione voluptatem
+                    </p>
+                    <a href="#" class="main-btn mt-4">Más</a>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center">
+                    <img src="img/tienda4.jpg" class="img-fluid" alt="About Us">
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- About fin -->
+
+    <!-- Cursos -->
+    <section id="cursos" class="cursos_wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Cursos</h6>
+                    <h3>Vuestros favoritos</h3>
+                </div>
+            </div>
+            <div class="row m-0">
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="curso-item">
+                        <img src="img/cursos/ramo2.jpg" class="img-fluid">
+                        <div class="curso-item-wrap">
+                            <div class="curso-content">
+                                <!-- si el texto es mas largo o mas corto el hoover me va a quedar de distintos tamaños -> intentar que sean de una longitus parecida -->
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Ramo Parisino</h5>
+                                <p class="text-white">Aprende a confeccionar un ramo con colores claros y fríos con los
+                                    que conseguirás obtener una sensación de tranquiliad</p>
+                                <p class="text-white fw-bold mt-lg-4">150€ / persona</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="curso-item">
+                        <img src="img/cursos/arbol2.jpg" class="img-fluid">
+                        <div class="curso-item-wrap">
+                            <div class="curso-content">
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Árbol Tropical</h5>
+                                <p class="text-white">¿Quién dijo que las rosas no crecen de los árboles? Aprende a
+                                    crear un pequeño arbolito con una variedad de flores cálidas</p>
+                                <p class="text-white fw-bold mt-lg-4">140€ / persona</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4 mb-lg-0">
+                    <div class="curso-item">
+                        <img src="img/cursos/corazon2.jpg" class="img-fluid">
+                        <div class="curso-item-wrap">
+                            <div class="curso-content">
+                                <h5 class="text-white mb-lg-5 text-decoration-underline">Ramo Corazón</h5>
+                                <p class="text-white">Demuestra todo el amor que llevas dentro con este precioso
+                                    ramo en forma de corazón de colores rosados y pálidos blacos</p>
+                                <p class="text-white fw-bold mt-lg-4">195€ / persona</p>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Cursos fin -->
+
+    <!-- Servicios -->
+    <section id="servicios" class="servicios_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Estamos aqui para ti</h6>
+                    <h3>Nuestros Servicios</h3>
+                </div>
+            </div>
+            <div class="row align-items-center servicio-item-wrap">
+                <div class="col-lg-7 p-lg-0">
+                    <!--Imagenes-->
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="sesion" role="tabpanel">
+                            <img src="img/servicios/niño6.png" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="ramo" role="tabpanel">
+                            <img src="img/servicios/ramoser3.png" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="silla" role="tabpanel">
+                            <img src="img/servicios/sillaser3.png" alt="">
+                        </div>
+                        <div class="tab-pane fade" id="mesa" role="tabpanel">
+                            <img src="img/servicios/mesaser3.png" alt="">
+                        </div>
+                    </div>
+                    <!--Imagenes fin-->
+                </div>
+                <div class="col-lg-5 position-relative">
+                    <!--Textos(links con tabs)-->
+                    <div class="servicio-menu-area">
+                        <ul class="nav">
+                            <li>
+                                <a data-bs-toggle="tab" href="#sesion" class="active">
+                                    <span class="servicio-icon">
+                                        <i class="fa-solid fa-camera fa-lg" style="color:#f2efe4;"></i>
+                                    </span>
+                                    <h5>Sessiones Fotográficas</h5>
+                                    <p><span>Fotografía </span>luptatem quia voluptas sit aspernatur aut odit aut
+                                        fugit, sed quia </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#ramo">
+                                    <span class="servicio-icon">
+                                        <i class="fa-solid fa-spa fa-lg" style="color:#f2efe4;"></i>
+                                    </span>
+                                    <h5>Ramos</h5>
+                                    <p><span>Ramos</span> lup provide grro tatem quia voluptas sit aspernatur aut
+                                        odit aut fugit, </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#silla">
+                                    <span class="servicio-icon">
+                                        <i class="fa-solid fa-chair fa-lg" style="color:#f2efe4;"></i>
+                                    </span>
+                                    <h5>Asientos</h5>
+                                    <p><span>Asientos</span> pool luptatem quia voluptas sit aspernatur aut odit aut
+                                        fugit, sed quia </p>
+                                </a>
+                            </li>
+                            <li>
+                                <a data-bs-toggle="tab" href="#mesa">
+                                    <span class="servicio-icon">
+                                        <i class="fa-solid fa-seedling fa-lg" style="color:#f2efe4;"></i>
+                                    </span>
+                                    <h5>Sobremesa</h5>
+                                    <p><span>Mesa</span> luptatem quia voluptas sit aspernatur aut odit aut fugit,
+                                        sed quia </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Textos(links con tabs) fin-->
+                </div>
+            </div>
+        </div>
+
+        <!-- Contador -->
+        <div class="counter mt-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count1"></span>+
+                        </h1>
+                        <p>Bodas</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count2"></span>+
+                            </h2>
+                            <p>Conferencias</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count3"></span>+
+                            </h2>
+                            <p>Exposiciones</p>
+                    </div>
+                    <div class="col-md-3 mb-lg-0 mb-md-0 mb-5">
+                        <h1>
+                            <span id="count4"></span>+
+                            </h2>
+                            <p>Sesiones Fotográficas</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Contador fin -->
+        </div>
+    </section>
+    <!-- Servicios fin -->
+
+    <!-- Plantilla -->
+    <section id="plantilla" class="plantilla_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>¿Qué podemos hacer por ti?</h6>
+                    <h3>Nuestra Plantilla</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img src="img/plantilla/eunwoo2.jpg" class="img-fluid rounded-3" />
+                        <div class="plantilla-info">
+                            <h5>Daniel García</h5>
+                            <p>Profesor</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img src="img/plantilla/joy2.jpg" class="img-fluid rounded-3" />
+                        <div class="plantilla-info">
+                            <h5>Yolanda Romero</h5>
+                            <p>Profesora</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img src="img/plantilla/irene2.jpg" class="img-fluid rounded-3" />
+                        <div class="plantilla-info">
+                            <h5>Irene del Castillo</h5>
+                            <p>Manager</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card p-0 rounded-3">
+                        <img src="img/plantilla/yeonjun2.jpg" class="img-fluid rounded-3" />
+                        <div class="plantilla-info">
+                            <h5>Hugo López</h5>
+                            <p>Profesor</p>
+                            <ul class="social-network">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Plantilla fin  -->
+
+    <!-- Galeria -->
+    <section id="galeria" class="galeria_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Algunos de nuestros trabajos</h6>
+                    <h3>Galería</h3>
+                </div>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-3 col-md-6 galeria-item">
+                    <img src="img/galeria/cesta2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 galeria-item">
+                    <img src="img/galeria/arbolrosa2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 galeria-item">
+                    <img src="img/galeria/ramoverde2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"></div>
+                </div>
+                <div class="col-lg-3 col-md-6 galeria-item">
+                    <img src="img/galeria/caida2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"></div>
+                </div>
+                <div class="col-md-6 galeria-item">
+                    <img src="img/galeria/jarrones2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"> </div>
+                </div>
+                <div class="col-md-6 galeria-item">
+                    <img src="img/galeria/suelo2.jpg" class="img-fluid w-100">
+                    <div class="galeria-item-content"> </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Galeria fin -->
+
+    <!-- Ventas -->
+    <section id="ventas" class="ventas_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Nuestras ofertas establecidas</h6>
+                    <h3>Servicios Económicos</h3>
+                </div>
+            </div>
+            <div id="contenedor-ventas" class="row">
+            </div>
+        </div>
+    </section>
+    <!-- Ventas fin  -->
+
+    <!-- Modal ventas -->
+    <div class="modal fade" id="modalVentas" aria-labelledby="exampleModalLabel" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Mi carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="cestaProductos" class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="vaciarCarrito">
+                        Vaciar carrito
+                    </button>
+                    <button type="button" id="procesarCompra" class="btn btn-primary">
+                        Tramitar pedido
+                    </button>
+                    <span>Total:</span>
+                    <p class="text-center" id="precioTotal"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Fin modal ventas -->
+
+    <!-- Blog -->
+    <section id="blog" class="blog_wrapper pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 section-title text-center mb-5">
+                    <h6>Información</h6>
+                    <h3>Sobre nosotros</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card p-0 border-0 rounded-0">
+                        <img src="img/blog/libro2.jpg" alt="">
+                        <div class="blog-content bg-white p-4">
+                            <h5 class="text-decoration-underline mb-4">Libro</h5>
+                            <h6>By Chuu - 18 Febrero, 2021</h6>
+                            <p class="mt-2">Nuestro libro con el qe podrás llevarte todo el conocimiento a tu propia
+                                casa.
+                            </p>
+                            <a href="#" class="main-btn mt-2">Leer mas</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card p-0 border-0 rounded-0">
+                        <img src="img/blog/clases2.jpg" alt="">
+                        <div class="blog-content bg-white p-4">
+                            <h5 class="text-decoration-underline mb-4">Clases</h5>
+                            <h6>By Chuu - 8 Marzo, 2022</h6>
+                            <p class="mt-2">Información detallada de nuestras clases y experienciasm del cliente.
+                            </p>
+                            <a href="#" class="main-btn mt-2">Leer mas</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Blog fin -->
+
+    <!-- Footer -->
+    <!-- Utilizaremos plantillas que vienen definidas en la carpeta 'partials' -->
+    <%- include('partials/footer') %>
+</body>
+
+</html>
