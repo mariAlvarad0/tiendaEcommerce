@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     counter("count3", 0, 1440, 3000);
     counter("count4", 100, 2579, 3000);
 });
+
 function recogerDatos() {
     //asi se coge el de los select (en este caso personas)
     var personas = document.getElementById("personas").value;
