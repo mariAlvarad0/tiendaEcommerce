@@ -276,6 +276,7 @@ function enviarPedido(e) {
             // Quitamos el cartel de éxito tras 5seg.
             setTimeout(() => {
                 alertExito.remove()
+                location.href = "/"
             }, 5000)
         }, 3000)
         
