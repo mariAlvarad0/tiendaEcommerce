@@ -8,6 +8,7 @@ const router = Router()
 // Configuramos la ruta inicial de nuestro explorador. Es decir lo que le responderá al servidor. 
 router.get('/', (req, res) => res.render('index', { title: 'Flowers for Chuu' }))
 router.get('/transaccion', (req, res) => res.render('transaccion', { title: 'Tramitar pedido' }))
+router.get('/leerMas', (req, res) => res.render('leerMas', { title: 'Leer Más' }))
 
 export default router 
 

@@ -53,7 +53,7 @@
                             <a class="nav-link" href="#blog">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal2">Contacto</a>
+                            <a class="nav-link" href="#reservar">Reservar</a>
                         </li>
                         <li class="nav-item mt-3 mt-lg-0">
                             <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalVentas"> Mi Cesta
@@ -67,8 +67,246 @@
     </header>
     <!-- fin del navbar -->
 
-    <!-- Modal Contacto -->
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalnom" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- TOASTS -->
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastPers" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor seleccione un número de personas.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastSes" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor seleccione una sesión.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastNom" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese un nombre.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toasttlf" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese un número de teléfono válido.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastmail" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese una dirección de correo correcta.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastclase" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor seleccione una de las clases disponibles.
+                </div>
+            </div>
+        </div>
+        <!-- FIN TOASTS -->
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- pedir cita -->
+
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <input type="text" class="bg-white form-control" id="dateholder" placeholder=""
+                                readonly="readonly">
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <select id="personasholder" class="form-select">
+                                <option selected disabled>Personas</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <select id="sesionholder" class="form-select">
+                                <option selected disabled>Sesion</option>
+                                <option value="1">Pública</option>
+                                <option value="2">Privada</option>
+                            </select>
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="recipientininom"
+                                onkeydown="return /^[a-zA-ZäöüßÄÖÜáéíóúÁÉÍÓÚ]/.test(event.key)">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Tlfno:</label>
+                            <input type="text" class="form-control" id="recipienttlfn" maxlength="9"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <label for="recipient-name" class="col-form-label">Correo:</label>
+                            <input type="text" class="form-control" id="recipientemail">
+                        </div>
+                    </form>
+                    <form class="row">
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckUno">
+                                <label class="form-check-label" for="flexCheckUno">
+                                    Ramo Parisino
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDos">
+                                <label class="form-check-label" for="flexCheckDos">
+                                    Árbol tropical
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg mb-3 mb-lg-0">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckTres">
+                                <label class="form-check-label" for="flexCheckTres">
+                                    Ramo Corazón
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Pedir cita fin -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="main-btn mt-4" onclick="validarReserva()">Enviar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalContacto" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <!-- TOASTS -->
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastMsj" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese un mensaje.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastAsun" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese asunto.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastNomCon" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese un nombre.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toasttlfCon" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese un número de teléfono válido.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastmailCon" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor ingrese una dirección de correo correcta.
+                </div>
+            </div>
+        </div>
+
+        <div class="position-absolute top-0 end-0 p-3" style="z-index: 10000">
+            <div id="toastclase" class="toast bg-danger" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">ERROR</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    Por favor seleccione una de las clases disponibles.
+                </div>
+            </div>
+        </div>
+        <!-- FIN TOASTS -->
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -77,51 +315,54 @@
                 </div>
                 <div class="modal-body">
                     <!-- pedir cita -->
+
                     <form class="row">
                         <div class="col-lg mb-3 mb-lg-0">
                             <label for="recipient-name" class="col-form-label">Asunto:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="asuntoContacto">
                         </div>
                     </form>
                     <form class="row">
                         <div class="col-lg mb-3 mb-lg-0">
                             <label for="recipient-name" class="col-form-label">Su mensaje:</label>
-                            <textarea class="form-control" id="recipient-name" rows="3"></textarea>
+                            <textarea class="form-control" id="mensajeContacto" rows="3"></textarea>
                         </div>
                     </form>
                     <form class="row">
                         <div class="col-lg mb-3 mb-lg-0">
                             <label for="recipient-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="nombreContacto"
+                                onkeydown="return /^[a-zA-ZäöüßÄÖÜáéíóúÁÉÍÓÚ]/.test(event.key)">
                         </div>
                     </form>
                     <form class="row">
                         <div class="col-lg mb-3 mb-lg-0">
                             <label for="recipient-name" class="col-form-label">Tlfno:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="recipienttlfnCon" maxlength="9"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
                     </form>
                     <form class="row">
                         <div class="col-lg mb-3 mb-lg-0">
                             <label for="recipient-name" class="col-form-label">Correo:</label>
-                            <input type="text" class="form-control" id="recipient-name">
+                            <input type="text" class="form-control" id="recipientemailCon">
                         </div>
                     </form>
+
                     <!-- Pedir cita fin -->
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="main-btn mt-4">Enviar</button>
+                    <button type="button" class="main-btn mt-4" onclick="validarContacto()">Enviar</button>
                 </div>
             </div>
         </div>
     </div>
     <!-- fin modal contactanos -->
-
     <!-- el banner -->
     <section id="home" class="banner_wrapper p-0">
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url(img/slider/campo.jpg);">
+                <div class="swiper-slide" style="background-image: url(./img/slider/campo.jpg);">
                     <div class="slide-caption text-center">
                         <div>
                             <h1>welcome to flowers for chuu</h1>
@@ -129,7 +370,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="swiper-slide" style="background-image: url(img/slider/clase.jpg);">
+                <div class="swiper-slide" style="background-image: url(./img/slider/clase.jpg);">
                     <div class="slide-caption text-center">
                         <div>
                             <h1>welcome to flowers for chuu</h1>
@@ -140,143 +381,28 @@
             </div>
             <div class="swiper-pagination"></div>
         </div>
+
         <!-- pedir cita -->
-        <div class="container booking-area">
-            <form class="row">
-                <div class="col-lg mb-3 mb-lg-0">
-                    <input type="date" class="form-control" placeholder="Date">
-                </div>
-                <div class="col-lg mb-3 mb-lg-0">
-                    <select class="form-select">
-                        <option selected>Personas</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                    </select>
-                </div>
-                <div class="col-lg mb-3 mb-lg-0">
-                    <select class="form-select">
-                        <option selected>Sesion</option>
-                        <option value="1">Pública</option>
-                        <option value="2">Privada</option>
-                    </select>
-                </div>
-                <div class="col-lg mb-3 mb-lg-0">
-                    <!-- <button type="submit" class="main-btn rounded-2 px-lg-3">disponibilidad</button> -->
-                    <!-- Button trigger modal -->
-                    <button type="button" id="disponibilidad" class="main-btn rounded-4 px-lg-3" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Disponibilidad</button>
-                </div>
-            </form>
-        </div>
+
         <!-- Pedir cita fin -->
     </section>
     <!-- Banner fin -->
-
-    <!-- Modal Disponibilidad-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Reserva</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <!-- pedir cita -->
-                    <form class="row">
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <input type="date" class="form-control" placeholder="Date">
-                        </div>
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <select class="form-select">
-                                <option selected>Personas</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
-                        </div>
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <select class="form-select">
-                                <option selected>Sesion</option>
-                                <option value="1">Pública</option>
-                                <option value="2">Privada</option>
-                            </select>
-                        </div>
-                    </form>
-                    <form class="row">
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <label for="recipient-name" class="col-form-label">Nombre:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                    <form class="row">
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <label for="recipient-name" class="col-form-label">Tlfno:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                    <form class="row">
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <label for="recipient-name" class="col-form-label">Correo:</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                    </form>
-                    <form class="row">
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Ramo Parisino
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Árbol tropical
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-lg mb-3 mb-lg-0">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    Ramo Corazón
-                                </label>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- Pedir cita fin -->
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="main-btn mt-4">Enviar</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- About -->
     <section id="about" class="about_wrapper">
         <div class="container">
             <div class="row flex-lg-row flex-column-reverse ">
                 <div class="col-lg-6 text-center text-lg-start">
-                    <h3>Bienvenido a <span>la floristería <br class="d-none d-lg-block">flowers</span> for chuu</h3>
+                    <h3>Bienvenido a <span>la floristería <br class="d-none d-lg-block">
+                            flowers</span> for chuu</h3>
                     <p>
                         En chuu podrás encontrar una amplia variedad de servicios para distintos eventos o uso
-                        personal además de clases para aprender a manejar las flores y poder observar lo versátiles que son.
+                        personal además de clases para aprender a manejar las flores y poder observar lo versátiles que
+                        son.
                     </p>
-                    <p>
-                        lorum luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
-                        dolores eos qui ratione voluptatem
-                    </p>
-                    <a href="#" class="main-btn mt-4">Más</a>
+                    <p>lorum luptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                        dolores eos qui ratione voluptatem</p>
+                    <a href="/leerMas" class="main-btn mt-4">Más</a>
                 </div>
                 <div class="col-lg-6 mb-4 mb-lg-0 ps-lg-4 text-center">
                     <img src="img/tienda4.jpg" class="img-fluid" alt="About Us">
@@ -286,7 +412,43 @@
         </div>
     </section>
     <!-- About fin -->
+    <section id="reservar" class="booking_wrapper">
+        <div class="container booking-area">
+            <div class="row ">
+                <div class="col">
+                    <h3><span>Reserva</span> tu clase</h3>
+                </div>
 
+            </div>
+            <form class="row">
+                <div class="col-lg mb-3 mb-lg-0">
+                    <input type="text" class="bg-white form-control" id="date" placeholder="" readonly="readonly">
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select id="personas" class="form-select">
+                        <option selected disabled>Personas</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <select id="sesion" class="form-select">
+                        <option selected disabled>Sesion</option>
+                        <option value="1">Pública</option>
+                        <option value="2">Privada</option>
+                    </select>
+                </div>
+                <div class="col-lg mb-3 mb-lg-0">
+                    <button type="button" class="main-btn rounded-2 px-lg-3" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalnom" onclick="recogerDatos()">disponibilidad</button>
+                </div>
+            </form>
+        </div>
+    </section>
     <!-- Cursos -->
     <section id="cursos" class="cursos_wrapper">
         <div class="container-fluid">
@@ -304,10 +466,12 @@
                             <div class="curso-content">
                                 <!-- si el texto es mas largo o mas corto el hoover me va a quedar de distintos tamaños -> intentar que sean de una longitus parecida -->
                                 <h5 class="text-white mb-lg-5 text-decoration-underline">Ramo Parisino</h5>
-                                <p class="text-white">Aprende a confeccionar un ramo con colores claros y fríos con los
-                                    que conseguirás obtener una sensación de tranquiliad</p>
+                                <p class="text-white">
+                                    Aprende a confeccionar un ramo con colores claros y fríos con los
+                                    que conseguirás obtener una sensación de tranquiliad
+                                </p>
                                 <p class="text-white fw-bold mt-lg-4">150€ / persona</p>
-                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#reservar">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -318,10 +482,12 @@
                         <div class="curso-item-wrap">
                             <div class="curso-content">
                                 <h5 class="text-white mb-lg-5 text-decoration-underline">Árbol Tropical</h5>
-                                <p class="text-white">¿Quién dijo que las rosas no crecen de los árboles? Aprende a
-                                    crear un pequeño arbolito con una variedad de flores cálidas</p>
+                                <p class="text-white">
+                                    ¿Quién dijo que las rosas no crecen de los árboles? Aprende a
+                                    crear un pequeño arbolito con una variedad de flores cálidas
+                                </p>
                                 <p class="text-white fw-bold mt-lg-4">140€ / persona</p>
-                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#reservar">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -332,10 +498,12 @@
                         <div class="curso-item-wrap">
                             <div class="curso-content">
                                 <h5 class="text-white mb-lg-5 text-decoration-underline">Ramo Corazón</h5>
-                                <p class="text-white">Demuestra todo el amor que llevas dentro con este precioso
-                                    ramo en forma de corazón de colores rosados y pálidos blacos</p>
+                                <p class="text-white">
+                                    Demuestra todo el amor que llevas dentro con este precioso ramo en
+                                    forma de corazón de colores rosados y pálidos blacos
+                                </p>
                                 <p class="text-white fw-bold mt-lg-4">195€ / persona</p>
-                                <a class="main-btn border-white text-white mt-lg-5" href="#disponibilidad">Reservar</a>
+                                <a class="main-btn border-white text-white mt-lg-5" href="#reservar">Reservar</a>
                             </div>
                         </div>
                     </div>
@@ -476,8 +644,8 @@
                             <h5>Daniel García</h5>
                             <p>Profesor</p>
                             <ul class="social-network">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/offclASTRO"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="https://twitter.com/offclASTRO"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                                 <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
                             </ul>
@@ -491,8 +659,9 @@
                             <h5>Yolanda Romero</h5>
                             <p>Profesora</p>
                             <ul class="social-network">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/RedVelvet"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="https://twitter.com/RVsmtown"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                                 <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
                             </ul>
@@ -506,8 +675,9 @@
                             <h5>Irene del Castillo</h5>
                             <p>Manager</p>
                             <ul class="social-network">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/RedVelvet"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="https://twitter.com/RVsmtown"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                                 <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
                             </ul>
@@ -521,8 +691,9 @@
                             <h5>Hugo López</h5>
                             <p>Profesor</p>
                             <ul class="social-network">
-                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="https://www.facebook.com/TXT.bighit"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li><a href="https://twitter.com/TXT_bighit"><i class="fab fa-twitter"></i></a></li>
                                 <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
                                 <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
                             </ul>
@@ -625,15 +796,13 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card p-0 border-0 rounded-0">
-                        <img src="img/blog/libro2.jpg" alt="">
+                        <img src="img/blog/libro2.jpg" alt="" />
                         <div class="blog-content bg-white p-4">
                             <h5 class="text-decoration-underline mb-4">Libro</h5>
                             <h6>By Chuu - 18 Febrero, 2021</h6>
                             <p class="mt-2">Nuestro libro con el qe podrás llevarte todo el conocimiento a tu propia
-                                casa.
-                            </p>
-                            <a href="#" class="main-btn mt-2">Leer mas</a>
-
+                                casa. </p>
+                            <a href="/leerMas" class="main-btn mt-2">Leer más</a>
                         </div>
                     </div>
                 </div>
@@ -645,14 +814,12 @@
                             <h6>By Chuu - 8 Marzo, 2022</h6>
                             <p class="mt-2">Información detallada de nuestras clases y experienciasm del cliente.
                             </p>
-                            <a href="#" class="main-btn mt-2">Leer mas</a>
-
+                            <a href="/leerMas" class="main-btn mt-2">Leer más</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
     <!-- Blog fin -->
 
