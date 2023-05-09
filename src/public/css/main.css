@@ -246,7 +246,6 @@ p {
 .booking-area {
     background: var(--bg-white);
     box-shadow: 0 .625rem .9375rem 0 rgb(0 0 0 / 10%);
-    margin-top: -4rem;
     padding: 3.125rem 1.875rem;
     position: relative;
     z-index: 2;
@@ -270,7 +269,7 @@ p {
 
 /* 4 About */
 .about_wrapper {
-    padding-top: 9.375rem;
+    padding-top: 5.375rem;
 }
 
 /*5  Cursos */
@@ -680,6 +679,10 @@ p {
 
 .footer_wrapper .copyright-section a {
     color: var(--secondary-text);
+}
+
+.toast {
+    z-index: 1000000000000000000000;
 }
 
 /* <!-Responsive Design---> */
