@@ -1,18 +1,12 @@
+<!-- HTML PROCESAR COMPRA -->
 <!DOCTYPE html>
 <html lang="es-ES">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
-
-    <!-- Custom File CSS -->
     <%- include ('partials/head')%>
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Menu navbar arriba -->
     <header class="header_wrapper">
         <nav class="navbar navbar-expand-lg">
@@ -33,95 +27,84 @@
     </header>
     <!-- fin del navbar -->
 
-        <button id="activarFuncion" class="btn btn-secondary boton mt-2 opacity-0">¡Click!</button>
+    <button id="activarFuncion" class="btn btn-secondary boton mt-2 opacity-0">¡Click!</button>
 
-        <div class="container" id="arriba">
-            <div class="row mt-3">
-                <div class="col">
-                    <h3>Realizar<span>compra</h3>
+    <div class="container" id="arriba">
+        <div class="row mt-3">
+            <div class="col">
+                <h3>Realizar<span>compra</h3>
 
-                    <form id="procesar-pago" method="POST">
-                        <div class="form-group row">
-                            <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente:</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="cliente" placeholder="Intrduzca su nombre"
-                                    name="persona">
-                            </div>
+                <form id="procesar-pago" method="POST">
+                    <div class="form-group row">
+                        <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente:</label>
+                        <div class="col-12 col-md-10">
+                            <input type="text" class="form-control" id="cliente" placeholder="Intrduzca su nombre"
+                                name="persona">
                         </div>
-                        <div class="form-group row">
-                            <label for="email" class="col-12 col-md-2 col-form-label h2">E-mail:</label>
-                            <div class="col-12 col-md-10">
-                                <input type="text" class="form-control" id="correo" placeholder="Introduzca su correo"
-                                    name="email.id" id="email.id">
-                            </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="email" class="col-12 col-md-2 col-form-label h2">E-mail:</label>
+                        <div class="col-12 col-md-10">
+                            <input type="text" class="form-control" id="correo" placeholder="Introduzca su correo"
+                                name="email.id" id="email.id">
                         </div>
+                    </div>
 
-                        <div id="carrito" class="form-group table-responsive">
-                            <table class="table" id="lista-compra">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Producto</th>
-                                        <th scope="col">Descripción</th>
-                                        <th scope="col">Cantidad</th>
-                                        <th scope="col">Precio</th>
-                                        <th scope="col">Sub Total</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
+                    <div id="carrito" class="form-group table-responsive">
+                        <table class="table" id="lista-compra">
+                            <thead>
                                 <tr>
-                                    <th colspan="4" scope="col" class="text-right">TOTAL
-                                        <p id="totalProceso"></p>
-                                    </th>
+                                    <th scope="col">Producto</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Precio</th>
+                                    <th scope="col">Sub Total</th>
                                 </tr>
-                            </table>
-                        </div>
+                            </thead>
+                            <tbody>
 
-                        <!-- Spinner: Animación para tramitar pedido  -->
-                        <div class="d-none" id="spinner">
-                            <div class="spinner">
-                                <div class="rect1"></div>
-                                <div class="rect2"></div>
-                                <div class="rect3"></div>
-                                <div class="rect4"></div>
-                                <div class="rect5"></div>
-                            </div>
-                        </div>
+                            </tbody>
+                            <tr>
+                                <th colspan="4" scope="col" class="text-right">TOTAL
+                                    <p id="totalProceso"></p>
+                                </th>
+                            </tr>
+                        </table>
+                    </div>
 
-                        <div class="row justify-content-center d-none" id="spinner">
-                            <div class="spinner">
-                                <div class="dot1"></div>
-                                <div class="dot2"></div>
-                            </div>
+                    <!-- Spinner: Animación para tramitar pedido  -->
+                    <div class="d-none" id="spinner">
+                        <div class="spinner">
+                            <div class="rect1"></div>
+                            <div class="rect2"></div>
+                            <div class="rect3"></div>
+                            <div class="rect4"></div>
+                            <div class="rect5"></div>
                         </div>
+                    </div>
 
-                        <div class="row justify-content-between">
-                            <div class="col-md-4 mb-2">
-                                <a href="/" class="main-btn mt-4">Seguir comprando</a>
-                            </div>
-                            <div class="col-xs-12 col-md-4">
-                                <input type="submit" class="main-btn mt-4" id="button" value="Finalizar compra">
-                            </div>
+                    <div class="row justify-content-center d-none" id="spinner">
+                        <div class="spinner">
+                            <div class="dot1"></div>
+                            <div class="dot2"></div>
                         </div>
-                    </form>
-                </div>
+                    </div>
+
+                    <div class="row justify-content-between">
+                        <div class="col-md-4 mb-2">
+                            <a href="/" class="main-btn mt-4">Seguir comprando</a>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <input type="submit" class="main-btn mt-4" id="button" value="Finalizar compra">
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
-        <!-- Bootstrap JS Links -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-
-        <!-- js Links -->
-        <script src="js/carrito.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Sweet Alert JS -->
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
 </body>
 
 </html>

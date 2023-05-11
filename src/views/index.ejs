@@ -3,19 +3,12 @@
 <html lang="es-ES">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
-
-    <!-- Custom File CSS -->
     <%- include ('partials/head')%>
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Menu navbar arriba -->
-    <%- include('partials/navigation') %>
+    <%- include('partials/header') %>
     <!-- fin del navbar -->
 
     <!-- Modal -->
@@ -775,8 +768,11 @@
     <!-- Blog fin -->
 
     <!-- Footer -->
-    <!-- Utilizaremos plantillas que vienen definidas en la carpeta 'partials' -->
     <%- include('partials/footer') %>
+    <!-- Footer Fin-->
+
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
 </body>
 
 </html>
