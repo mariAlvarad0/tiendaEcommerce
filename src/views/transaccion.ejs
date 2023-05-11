@@ -14,14 +14,31 @@
 
 <body>
     <!-- Menu navbar arriba -->
-    <%- include('partials/navigation') %>
+    <header class="header_wrapper">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="img/logo.png" class="img-fluid" alt="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav"></ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- fin del navbar -->
 
         <button id="activarFuncion" class="btn btn-secondary boton mt-2 opacity-0">¡Click!</button>
 
-        <div class="container">
+        <div class="container" id="arriba">
             <div class="row mt-3">
                 <div class="col">
-                    <h2 class="d-flex justify-content-center mb-3">Realizar Compra</h2>
+                    <h3>Realizar<span>compra</h3>
 
                     <form id="procesar-pago" method="POST">
                         <div class="form-group row">
@@ -81,11 +98,10 @@
 
                         <div class="row justify-content-between">
                             <div class="col-md-4 mb-2">
-                                <a href="/" class="btn btn-info btn-block">Seguir comprando</a>
+                                <a href="/" class="main-btn mt-4">Seguir comprando</a>
                             </div>
                             <div class="col-xs-12 col-md-4">
-                                <input type="submit" class="btn btn-success btn-block" id="button"
-                                    value="Finalizar compra">
+                                <input type="submit" class="main-btn mt-4" id="button" value="Finalizar compra">
                             </div>
                         </div>
                     </form>
@@ -102,6 +118,7 @@
 
         <!-- js Links -->
         <script src="js/carrito.js"></script>
+        <script src="js/main.js"></script>
 
         <!-- Sweet Alert JS -->
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -15,56 +15,7 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
     <!-- Menu navbar arriba -->
-    <header class="header_wrapper">
-        <nav class="navbar navbar-expand-lg">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="img/logo.png" class="img-fluid" alt="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-stream navbar-toggler-icon"></i>
-                </button>
-
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                    <ul class="navbar-nav menu-navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#cursos">Cursos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#plantilla">Plantilla</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#galeria">Galeria</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#ventas">Ventas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#blog">Blog</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#reservar">Reservar</a>
-                        </li>
-                        <li class="nav-item mt-3 mt-lg-0">
-                            <a class="nav-link" data-bs-toggle="modal" data-bs-target="#modalVentas"> Mi Cesta
-                                <i class="fa-solid fa-cart-shopping" id="carritoContenedor">0</i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <%- include('partials/navigation') %>
     <!-- fin del navbar -->
 
     <!-- Modal -->
@@ -770,7 +721,7 @@
                 <div id="cestaProductos" class="modal-body">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="main-btn mt-4" id="vaciarCarrito"></button>
+                    <button type="button" class="main-btn mt-4" id="vaciarCarrito">
                         Vaciar carrito
                     </button>
                     <button type="button" id="procesarCompra" class="main-btn mt-4">
