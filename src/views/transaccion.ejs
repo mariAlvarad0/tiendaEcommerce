@@ -1,14 +1,8 @@
+<!-- HTML PROCESAR COMPRA -->
 <!DOCTYPE html>
 <html lang="es-ES">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%= title %>
-    </title>
-
-    <!-- Custom File CSS -->
     <%- include ('partials/head')%>
 </head>
 
@@ -109,19 +103,8 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS Links -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-
-    <!-- js Links -->
-    <script src="js/carrito.js"></script>
-    <script src="js/main.js"></script>
-
-    <!-- Sweet Alert JS -->
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
 </body>
 
 </html>
