@@ -1,0 +1,56 @@
+<!-- HTML PRINCIPAL -->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body>
+    <!-- Register Section Begin -->
+    <div class="register-login-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3">
+                    <div class="login-form">
+                        <h2>Iniciar sesión</h2>
+                        <form action="#">
+                            <div class="group-input">
+                                <label for="username">Email *</label>
+                                <input type="text" id="username">
+                            </div>
+                            <div class="group-input">
+                                <label for="pass">Contraseña *</label>
+                                <input type="text" id="pass">
+                            </div>
+                            <div class="group-input gi-check">
+                                <div class="gi-more">
+                                    <label for="save-pass">
+                                        <input type="checkbox" id="save-pass"> Guardar Contraseña
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <a href="#" class="forget-pass">Olvidé mi contraseña</a>
+                                </div>
+                            </div>
+                            <button type="submit" class="site-btn login-btn">INICIAR SESIÓN</button>
+                        </form>
+                        <div class="switch-login">
+                            <a href="/register" class="or-login">Crear una cuenta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Register Form Section End -->
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+        <!-- Footer fin-->
+
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+    <!-- Scripts fin-->
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!-- HTML PRINCIPAL -->
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+    <%- include('partials/head') %>
+</head>
+
+<body>
+    <!--================ Cart Area =================-->
+    <main class="mt-5" pt-4>
+        <div class="container">
+            <h2 class="mt-5 mb-3 text-center">Carrito de compra</h2>
+            <div class="card my-5">
+                <!-- <div id="carrito" class="table-responsive"> -->
+                <div id="carrito" class="card-body">
+                    <table class="table table-responsive" id="lista-compra">
+                        <thead>
+                            <tr>
+                                <th class="th-lg">Producto</th>
+                                <th class="th-lg"">Descripción</th>
+                                <th class=" th-lg"">Precio</th>
+                                <th class="th-lg"">Cantidad</th>
+                                <th class=" th-lg"">Total</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="cartRows">
+
+                        </tbody>
+                    </table>
+                    <div class="card-footer text-right">
+                        <h4>SUBTOTAL: <span id="total"></span></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header text-center">
+                    Finalizar la compra
+                </div>
+                <form class="card-body" id="checkoutCart">
+                    <div class="row">
+                        <div class=" col-md-6 mb-4">
+                            <label for="country">Tipo Envio</label>
+                            <select class="custom-select d-block w-100" id="shippingMethod" name=" shippingMethod"
+                                required="">
+                                <option value="">Elegir...</option>
+                                <option value="correos">Correos: 5.00€</option>
+                                <option value="express">Correos Express: 12.00€</option>
+                                <option value="mrw">MRW: 3.50€</option>
+                                <option value="seur">SEUR: 10.00€</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Elija un tipo de envio.
+                            </div>
+                        </div>
+
+                        <div class=" col-md-6 mb-4">
+                            <label for="country">Pago</label>
+                            <select class="custom-select d-block w-100" id="paymentMethod" name="paymentMethod"
+                                required="">
+                                <option value="">Elegir...</option>
+                                <option value="debito">Tarjeta débito</option>
+                                <option value="credito">Tarjeta crédito</option>
+                                <option value="mastercard">Mastercard</option>
+                                <option value="paypal">PayPal</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Elija un tipo de envio.
+                            </div>
+                        </div>
+
+                        <h4>Detalles de envío</h4>
+
+                        <div class="col-lg-6">
+                            <label for="fir">Nombre<span>*</span></label>
+                            <input type="text" id="fir">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="last">Apellidos<span>*</span></label>
+                            <input type="text" id="last">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="street">Dirección<span>*</span></label>
+                            <input type="text" id="street" class="street-first">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="zip">Código Postal</label>
+                            <input type="text" id="zip">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="town">Localidad / Ciudad<span>*</span></label>
+                            <input type="text" id="town">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="cun">País<span>*</span></label>
+                            <input type="text" id="cun">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="email">Email<span>*</span></label>
+                            <input type="text" id="email">
+                        </div>
+
+                        <div class="col-lg-6">
+                            <label for="phone">Teléfono<span>*</span></label>
+                            <input type="text" id="phone">
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="create-item">
+                                <label for="acc-create">
+                                    Crear una cuenta
+                                    <input type="checkbox" id="acc-create">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--================ Animación para tramitar pedido =================-->
+                    <div class="row justify-content-center">
+                        <img id="spinner" src="img/cargando.gif">
+                    </div>
+
+                    <a href="/" class="main-btn2">SEGUIR COMPRANDO</a>
+                    <a href="#" class="main-btn2" id="procesar-compra">FINALIZAR PEDIDO</a>
+                    <!--================ Letrero compra éxito =================-->
+                    <div class="row justify-content-center" id="loaders"></div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <!--================ End Cart Area =================-->
+
+    <!-- Footer -->
+    <%- include('partials/footer') %>
+        <!-- Footer fin-->
+
+    <!-- Scripts -->
+    <%- include('partials/scripts') %>
+    <script src="js/compra.js"></script>
+    <!-- Scripts fin-->
+</body>
+
+</html>
