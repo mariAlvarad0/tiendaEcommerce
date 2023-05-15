@@ -176,7 +176,7 @@ class Carrito {
                 timer: 2000
             })
         } else {
-            location.href = "/shopping-cart"
+            location.href = "shopping-cart"
         }
     }
 
@@ -236,7 +236,7 @@ class Carrito {
                 showConfirmButton: false,
                 timer: 4000
             }).then(function () {
-                window.location = "index.html" // Si no hay nada en el carrito, nos devuelve a la página principal
+                window.location = "/" // Si no hay nada en el carrito, nos devuelve a la página principal
             })
         } else {
             // Animación para esperar validación proceso de compra
@@ -256,7 +256,7 @@ class Carrito {
                 setTimeout(() => {
                     alertExito.remove();
                     compra.vaciarLocalStorage();
-                    window.location = "index.html"; // Redirigimos a la página principal al  terminar la compra
+                    window.location = "/"; // Redirigimos a la página principal al  terminar la compra
                 }, 4000);
             }, 3000);
         }

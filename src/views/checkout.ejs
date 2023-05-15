@@ -9,9 +9,8 @@
 <body>
     <!--Main layout-->
     <main class="mt-5 pt-4">
-        <div class="container wow fadeIn animated">
+        <div class="container">
             <h2 class="mt-5 mb-3 h2 text-center">
-                Perfil de <%= locals.userLogged.name%>
             </h2>
             <div class="card mb-5">
                 <div class="card-header">
@@ -19,13 +18,11 @@
                 </div>
                 <div class="card-body">
                     <p><span class="font-weight-bold mr-2">Nombre: </span>
-                        <%= locals.userLogged.name %>
                     </p>
                     <p><span class="font-weight-bold mr-2">Email: </span>
-                        <%= locals.userLogged.email %>
                     </p>
-                    <a href="profile/edit" class="btn btn-info ml-0">Editar mi perfil</a>
-                    <a href="profile/edit" class="btn btn-danger ml-0">Salir</a>
+                    <a href="#" class="btn btn-info ml-0">Editar mi perfil</a>
+                    <a href="#" class="btn btn-danger ml-0">Salir</a>
                 </div>
             </div>
             <div class="card mb-5">
